@@ -37,6 +37,7 @@ class Module
         $services = $e->getApplication()->getServiceManager();
         $router = $services->get('router');
         $config = $services->get('configuration');
+        $translator = $services->get('translator');
         $matchedRoute = $router->match($request);
         $requestUri = $request->getRequestUri();
         $isBackend = false;
@@ -61,6 +62,20 @@ class Module
 
         self::$templateName = $config['template']['defaults'][$templateType];
         self::$templateType = $templateType;
+
+        if ( ! isset($themeConfig['translator'], $themeConfig['translator']['translation_file_patterns']))
+            return;
+
+        foreach ($themeConfig['translator']['translation_file_patterns'] as $transPattern)
+        {
+            $translator->addTranslationFilePattern(
+                $transPattern['type'],
+                $transPattern['base_dir'],
+                $transPattern['pattern'],
+                $transPattern['text_domain']
+            );
+        }
+
     }
 
 }

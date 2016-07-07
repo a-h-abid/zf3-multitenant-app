@@ -49,7 +49,7 @@
             <?= $this->content; ?>
             <hr>
             <footer>
-                <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
+                <p><?= sprintf($this->translate('Copyright &copy; %1$s by %2$s, All rights reserved','template/frontend/zf-skeleton'), date('Y'), $this->siteName()) ?></p>
             </footer>
         </div>
         <?= $this->inlineScript() ?>
