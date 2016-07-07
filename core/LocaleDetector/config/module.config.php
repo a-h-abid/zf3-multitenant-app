@@ -12,6 +12,9 @@ return [
     ],
 
     'view_helpers' => [
+        'factories' => [
+            'localesList' => View\Factory\LocalesListFactory::class,
+        ],
         'invokables' => [
             'currentLocale' => View\Helper\CurrentLocale::class,
         ],
