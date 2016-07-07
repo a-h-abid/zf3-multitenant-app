@@ -37,7 +37,8 @@
             "LocaleDetector\\": "core/LocaleDetector/src/",
             "Theme\\": "core/Theme/src/",
             "Helpers\\": "core/Helpers/src/",
-            "Application\\": "module/Application/src/"
+            "Application\\": "module/Application/src/",
+            "Administrator\\": "module/Administrator/src/"
         },
         "files" : [
             "helper/debug.php",

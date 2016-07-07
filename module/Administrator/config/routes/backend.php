@@ -1,6 +1,6 @@
 <?php
 
-namespace Application;
+namespace Administrator;
 
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
@@ -12,7 +12,7 @@ return [
         'options' => [
             'route'    => '/admin',
             'defaults' => [
-                'controller' => Controller\AdminController::class,
+                'controller' => Controller\LoginController::class,
                 'action'     => 'index',
             ],
         ],
@@ -23,8 +23,8 @@ return [
                 'options' => [
                     'route'    => '/dashboard',
                     'defaults' => [
-                        'controller' => Controller\AdminController::class,
-                        'action'     => 'dashboard',
+                        'controller' => Controller\DashboardController::class,
+                        'action'     => 'index',
                     ],
                 ],
             ]

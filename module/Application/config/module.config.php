@@ -36,7 +36,6 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
-            Controller\AdminController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
@@ -44,13 +43,6 @@ return [
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'application/index/about' => __DIR__ . '/../view/application/index/about.phtml',
             'application/index/color' => __DIR__ . '/../view/application/index/color.phtml',
-            'application/admin/index' => __DIR__ . '/../view/application/admin/index.phtml',
-            'application/admin/js/login' => __DIR__ . '/../view/application/admin/js/login.js',
-            'application/admin/dashboard' => __DIR__ . '/../view/application/admin/dashboard.phtml',
-            'application/admin/dashboard-partials/featured-stats' => __DIR__ . '/../view/application/admin/dashboard-partials/featured-stats.phtml',
-            'application/admin/dashboard-partials/monthly-percentage-stats' => __DIR__ . '/../view/application/admin/dashboard-partials/monthly-percentage-stats.phtml',
-            'application/admin/dashboard-partials/monthly-sales-report' => __DIR__ . '/../view/application/admin/dashboard-partials/monthly-sales-report.phtml',
-            'application/admin/dashboard-partials/visitors-report' => __DIR__ . '/../view/application/admin/dashboard-partials/visitors-report.phtml',
         ],
     ],
 ];
