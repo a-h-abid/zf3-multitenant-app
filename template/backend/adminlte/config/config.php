@@ -26,6 +26,9 @@ return [
             'error/index'   => 'template/backend/adminlte/error/index.phtml',
             'layout/layout-auth' => 'template/backend/adminlte/layout/layout-auth.phtml',
             'layout/layout-guest' => 'template/backend/adminlte/layout/layout-guest.phtml',
+            'layout/partials/header' => 'template/backend/adminlte/layout/partials/header.phtml',
+            'layout/partials/sidebar' => 'template/backend/adminlte/layout/partials/sidebar.phtml',
+            'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
         ]
     ],
 ];

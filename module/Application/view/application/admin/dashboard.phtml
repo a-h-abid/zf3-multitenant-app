@@ -1,3 +1,36 @@
-<h1>Admin Dashboard</h1>
+<div class="row">
+    <?= $this->partial('application/admin/dashboard-partials/featured-stats') ?>
+</div>
 
-<p>This is the admin dashboard page.</p>
+<div class="row">
+    <?= $this->partial('application/admin/dashboard-partials/monthly-sales-report') ?>
+</div>
+
+
+<!-- Main row -->
+<div class="row">
+    <!-- Left col -->
+    <div class="col-md-8">
+        <?= $this->partial('application/admin/dashboard-partials/visitors-report') ?>
+    </div>
+    
+    <!-- Right col -->
+    <div class="col-md-4">
+        <?= $this->partial('application/admin/dashboard-partials/monthly-percentage-stats') ?>
+    </div>
+</div>
+<!-- /.row -->
+
+<?php
+
+$this->headLink()
+        ->appendStylesheet($this->basePath('assets/plugins/jvectormap/1.2.2/jquery-jvectormap-1.2.2.css'))
+        ;
+
+$this->inlineScript()
+        ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js')
+        ->appendFile($this->basePath('assets/plugins/jvectormap/1.2.2/jquery-jvectormap-1.2.2.min.js'))
+        ->appendFile($this->basePath('assets/plugins/jvectormap/1.2.2/jquery-jvectormap-world-mill-en.js'))
+        ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js')
+        ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.5/js/pages/dashboard2.js')
+        ;
