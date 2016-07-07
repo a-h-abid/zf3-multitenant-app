@@ -1,0 +1,11 @@
+<?php
+
+return [
+
+    'site-settings' => [
+
+        'site-name' => 'Multi-Tenant',
+
+    ],
+
+];

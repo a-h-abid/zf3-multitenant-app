@@ -1,0 +1,37 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->assetsPath() . '/img/favicon.ico'])
+                        ->prependStylesheet($this->assetsPath('css/style.css'))
+                        ->prependStylesheet($this->assetsPath('css/bootstrap-theme.min.css'))
+                        ->prependStylesheet($this->assetsPath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->assetsPath('js/bootstrap.min.js'))
+            ->prependFile($this->assetsPath('js/jquery-2.2.4.min.js'))
+        ?>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login to Admin</h1>
+            <?= $this->content; ?>
+            <hr>
+            <footer>
+                <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
+            </footer>
+        </div>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>

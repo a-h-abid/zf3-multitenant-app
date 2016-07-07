@@ -1,0 +1,6 @@
+<?php
+
+if ($this->currentRoute() == 'admin')
+    echo $this->partial('layout/layout-guest');
+else
+    echo $this->partial('layout/layout-auth');
