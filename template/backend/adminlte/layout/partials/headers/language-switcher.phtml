@@ -6,7 +6,12 @@
     </a>
     <ul class="dropdown-menu">
         <?php foreach ($this->localesList() as $locale) : ?>
-        <li><a href="<?= $this->localeUrl($this->currentRoute(), [], $locale['locale']) ?>"><?= $locale['name'] ?></a></li>
+        <li>
+            <a href="<?= $this->localeUrl($this->currentRoute(), [], $locale['locale']) ?>">
+                <img src="<?= $this->basePath('assets/common/img/flags/'.$locale['region_code'].'.png') ?>" />
+                <?= $locale['name'] ?>
+            </a>
+        </li>
         <?php endforeach; ?>
     </ul>
 </li>

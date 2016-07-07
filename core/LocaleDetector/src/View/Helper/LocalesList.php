@@ -27,6 +27,7 @@ class LocalesList extends AbstractHelper {
                 'name' => Locale::getDisplayName($locale),
                 'language' => Locale::getDisplayLanguage($locale),
                 'region' => Locale::getDisplayRegion($locale),
+                'region_code' => substr($locale, -2, 2),
             );
         }
         
