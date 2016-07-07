@@ -27,6 +27,11 @@ return [
             'layout/layout-auth' => 'template/backend/adminlte/layout/layout-auth.phtml',
             'layout/layout-guest' => 'template/backend/adminlte/layout/layout-guest.phtml',
             'layout/partials/header' => 'template/backend/adminlte/layout/partials/header.phtml',
+            'layout/partials/headers/messages' => 'template/backend/adminlte/layout/partials/headers/messages.phtml',
+            'layout/partials/headers/notifications' => 'template/backend/adminlte/layout/partials/headers/notifications.phtml',
+            'layout/partials/headers/tasks' => 'template/backend/adminlte/layout/partials/headers/tasks.phtml',
+            'layout/partials/headers/language-switcher' => 'template/backend/adminlte/layout/partials/headers/language-switcher.phtml',
+            'layout/partials/headers/user-menu' => 'template/backend/adminlte/layout/partials/headers/user-menu.phtml',
             'layout/partials/sidebar' => 'template/backend/adminlte/layout/partials/sidebar.phtml',
             'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
         ]
