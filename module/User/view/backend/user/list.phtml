@@ -1,1 +1,15 @@
 <h3>List</h3>
+
+<?php
+
+echo '<p>' . (new NumberFormatter('en-US', NumberFormatter::CURRENCY))->format('123') . '</p>';
+echo '<p>' . (new NumberFormatter('bn-BD', NumberFormatter::CURRENCY))->format('123') . '</p>';
+echo '<p>' . (new NumberFormatter('bn-BD', NumberFormatter::CURRENCY))->getSymbol(NumberFormatter::CURRENCY_SYMBOL) . '</p>';
+echo '<p>' . (new NumberFormatter('bn-BD', NumberFormatter::CURRENCY))->getSymbol(NumberFormatter::INTL_CURRENCY_SYMBOL) . '</p>';
+echo '<p>' . (new NumberFormatter('en-GB', NumberFormatter::CURRENCY))->getSymbol(NumberFormatter::INTL_CURRENCY_SYMBOL) . '</p>';
+
+echo '<p> Cur Fur :: '. $this->currency(103, 'USD') . '</p>';
+echo '<p> Cur Fur :: '. $this->currency(103, 'GBP') . '</p>';
+echo '<p> Cur Fur :: '. $this->currency(103, 'EUR') . '</p>';
+echo '<p> Cur Fur :: '. $this->currency(103, 'BDT') . '</p>';
+echo '<p> Cur Fur :: '. $this->currency(103, 'INR') . '</p>';

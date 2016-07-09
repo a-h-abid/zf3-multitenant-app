@@ -29,10 +29,12 @@ return [
     'Zend\Form',
     // 'Zend\Db',
     'Zend\Cache',
+    
     'Localization',
     'Theme',
     'Helpers',
     'GlobalSettings',
+    'Currency',
     'Application',
     'Administrator',
     'User',

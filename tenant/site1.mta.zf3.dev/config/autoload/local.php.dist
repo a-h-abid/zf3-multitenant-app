@@ -26,6 +26,9 @@ return [
             
             'backend' => [
                 'adminlte' => [
+                    'show-header-messages' => false,
+                    'show-header-notifications' => false,
+                    'show-header-tasks' => false,
                     'show-control-sidebar' => false,
                 ],
             ],

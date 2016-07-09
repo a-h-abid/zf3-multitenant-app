@@ -47,5 +47,10 @@ if (file_exists(__DIR__ . '/../config/development.config.php')) {
     $appConfig = ArrayUtils::merge($appConfig, require __DIR__ . '/../config/development.config.php');
 }
 
+// Set Config For Tenent
+if (file_exists(__DIR__.'/../tenant/'.$_SERVER['SERVER_NAME'].'/config/application.config.php')) {
+    $appConfig = ArrayUtils::merge($appConfig, require __DIR__.'/../tenant/'.$_SERVER['SERVER_NAME'].'/config/application.config.php');
+}
+
 // Run the application!
 Application::init($appConfig)->run();

@@ -4,7 +4,7 @@ return [
 
     'site-settings' => [
 
-        'site-name' => 'Multi-Tenant',
+        'site-name' => 'Site1',
 
         'site-title-separator' => ' | ',
 

@@ -38,6 +38,7 @@
             "Theme\\": "core/Theme/src/",
             "Helpers\\": "core/Helpers/src/",
             "GlobalSettings\\": "core/GlobalSettings/src/",
+            "Currency\\": "core/Currency/src/",
             "Application\\": "module/Application/src/",
             "Administrator\\": "module/Administrator/src/",
             "User\\": "module/User/src/"
