@@ -7,6 +7,7 @@
 
 namespace Theme;
 
+use Zend\Stdlib\ArrayUtils;
 use Zend\Mvc\MvcEvent;
 use Zend\Http\PhpEnvironment\Request as HttpRequest;
 
@@ -15,6 +16,8 @@ class Module
     public static $templateName;
 
     public static $templateType;
+
+    public static $templateSettings = [];
 
     public function getConfig()
     {
@@ -62,6 +65,7 @@ class Module
 
         self::$templateName = $config['template']['defaults'][$templateType];
         self::$templateType = $templateType;
+        $this->setTemplateSettings($config, $themeConfig);
 
         if ( ! isset($themeConfig['translator'], $themeConfig['translator']['translation_file_patterns']))
             return;
@@ -76,6 +80,19 @@ class Module
             );
         }
 
+    }
+
+    private function setTemplateSettings($config, $themeConfig)
+    {
+        if (isset($themeConfig['template']['settings']))
+        {
+            self::$templateSettings = ArrayUtils::merge(self::$templateSettings, $themeConfig['template']['settings']);
+        }
+
+        if (isset($config['template']['settings'], $config['template']['settings'][self::$templateType], $config['template']['settings'][self::$templateType][self::$templateName]))
+        {
+            self::$templateSettings = ArrayUtils::merge(self::$templateSettings, $config['template']['settings'][self::$templateType][self::$templateName]);
+        }
     }
 
 }

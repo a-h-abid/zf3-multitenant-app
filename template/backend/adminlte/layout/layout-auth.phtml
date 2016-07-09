@@ -69,12 +69,14 @@
             <p><?= sprintf($this->translate('Copyright &copy; %1$s by %2$s, All rights reserved','template/backend/adminlte'), date('Y'), $this->siteName()) ?></p>
           </footer>
 
+          <?php if ($this->templateSettings('show-control-sidebar') == true) : ?>
           <!-- Control Sidebar -->
           <?= $this->partial('layout/partials/control-sidebar') ?>
           <!-- /.control-sidebar -->
           <!-- Add the sidebar's background. This div must be placed
                immediately after the control sidebar -->
           <div class="control-sidebar-bg"></div>
+        <?php endif; ?>
 
         </div>
         <!-- ./wrapper -->        

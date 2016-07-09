@@ -18,9 +18,17 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           
+          <?php if ($this->templateSettings('show-header-messages') == true) : ?>
           <?= $this->partial('layout/partials/headers/messages') ?>
+          <?php endif; ?>
+          
+          <?php if ($this->templateSettings('show-header-notifications') == true) : ?>
           <?= $this->partial('layout/partials/headers/notifications') ?>
+          <?php endif; ?>
+
+          <?php if ($this->templateSettings('show-header-tasks') == true) : ?>
           <?= $this->partial('layout/partials/headers/tasks') ?>
+          <?php endif; ?>
 
           <?php if ($this->siteSettings('language-switcher') == true) : ?>
           <?= $this->partial('layout/partials/headers/language-switcher') ?>
@@ -28,10 +36,12 @@
 
           <?= $this->partial('layout/partials/headers/user-menu') ?>
 
+          <?php if ($this->templateSettings('show-control-sidebar') == true) : ?>
           <!-- Control Sidebar Toggle Button -->
           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
+          <?php endif; ?>
         </ul>
       </div>
 

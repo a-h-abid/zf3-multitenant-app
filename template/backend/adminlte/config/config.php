@@ -4,6 +4,12 @@ return [
     'template' => [
         'name' => 'adminlte',
         'type' => 'backend',
+        'settings' => [
+            'show-header-messages' => true,
+            'show-header-notifications' => true,
+            'show-header-tasks' => true,
+            'show-control-sidebar' => true,
+        ],
     ],
     'translator' => [
         'locale' => 'en-US',

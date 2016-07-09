@@ -67,6 +67,7 @@ return [
     'view_helpers' => [
         'factories' => [
             'assetsPath' => View\Factory\AssetsPathFactory::class,
+            'templateSettings' => View\Factory\TemplateSettingsFactory::class,
         ],
     ],
 
