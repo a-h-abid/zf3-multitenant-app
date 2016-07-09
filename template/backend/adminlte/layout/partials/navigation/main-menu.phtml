@@ -2,7 +2,7 @@
     $pageArray = $page->toArray();
 ?>
 <li class="treeview <?= $page->isActive() ? 'active' : '' ?>">
-  <a href="<?= $page->getHref() ?: '#' ?>">
+  <a href="<?= '/'.$this->currentLocale().$page->getHref() ?: '#' ?>">
     <?php if (isset($pageArray['icon-class'])) : ?>
     <i class="fa fa-dashboard"></i>
     <?php endif; ?>

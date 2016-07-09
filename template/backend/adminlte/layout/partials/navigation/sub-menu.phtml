@@ -3,7 +3,7 @@
         $pageArray = $page->toArray();
     ?>
     <li class="<?= $page->isActive() ? 'active' : '' ?>">
-        <a href="<?= $page->getHref() ?: '#' ?>">
+        <a href="<?= '/'.$this->currentLocale().$page->getHref() ?: '#' ?>">
             <?php if (isset($pageArray['icon-class'])) : ?>
             <i class="fa fa-circle-o"></i>
             <?php endif; ?>

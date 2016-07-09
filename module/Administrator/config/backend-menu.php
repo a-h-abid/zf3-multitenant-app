@@ -16,12 +16,12 @@ return [
                     'roles' => [
                         'label' => 'Roles',
                         'icon-class' => 'fa fa-cog',
-                        'uri' => 'admin/roles',
+                        'uri' => '/admin/roles',
                     ],
                     'permissions' => [
                         'label' => 'Permissions',
                         'icon-class' => 'fa fa-cog',
-                        'uri' => 'admin/permissions',
+                        'uri' => '/admin/permissions',
                     ]
                 ]
             ]
