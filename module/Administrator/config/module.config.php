@@ -10,14 +10,14 @@ namespace Administrator;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+
     'router' => [
         'routes' => include_once __DIR__.'/routes.php',
     ],
     
     'navigation' => [
-
         'breadcrumb' => include_once __DIR__.'/breadcrumb.php',
-
+        'backend-menu' => include_once __DIR__.'/backend-menu.php',
     ],
 
     'translator' => [
@@ -36,12 +36,20 @@ return [
             ],
         ],
     ],
+
     'controllers' => [
         'factories' => [
             Controller\LoginController::class => InvokableFactory::class,
             Controller\DashboardController::class => InvokableFactory::class,
         ],
     ],
+
+    'service_manager' => [
+        'factories' => [
+            'backend-menu' => Service\BackendMenuNavigationFactory::class,
+        ]
+    ],
+
     'view_manager' => [
         'template_map' => [
             'administrator/login/index' => __DIR__ . '/../view/administrator/login/index.phtml',
@@ -53,4 +61,5 @@ return [
             'administrator/dashboard/dashboard-partials/visitors-report' => __DIR__ . '/../view/administrator/dashboard/dashboard-partials/visitors-report.phtml',
         ],
     ],
+
 ];

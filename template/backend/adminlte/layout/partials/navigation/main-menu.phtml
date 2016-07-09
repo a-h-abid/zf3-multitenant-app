@@ -1,0 +1,24 @@
+<?php foreach ($this->container as $key => $page) :
+    $pageArray = $page->toArray();
+?>
+<li class="treeview <?= $page->isActive() ? 'active' : '' ?>">
+  <a href="<?= $page->getHref() ?: '#' ?>">
+    <?php if (isset($pageArray['icon-class'])) : ?>
+    <i class="fa fa-dashboard"></i>
+    <?php endif; ?>
+    
+    <span><?= $this->translate($page->getLabel()) ?></span>
+    
+    <?php if ($page->hasPages()) : ?>
+    <span class="pull-right-container">
+      <i class="fa fa-angle-left pull-right"></i>
+    </span>
+    <?php endif; ?>
+  </a>
+
+  <?php if ($page->hasPages()) : ?>
+  <?= $this->partial('layout/partials/navigation/sub-menu', array('pages' => $page->getPages())) ?>
+  <?php endif; ?>
+
+</li>
+<?php endforeach; ?>

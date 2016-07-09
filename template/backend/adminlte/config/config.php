@@ -40,6 +40,8 @@ return [
             'layout/partials/headers/user-menu' => 'template/backend/adminlte/layout/partials/headers/user-menu.phtml',
             'layout/partials/breadcrumb' => 'template/backend/adminlte/layout/partials/breadcrumb.phtml',
             'layout/partials/sidebar' => 'template/backend/adminlte/layout/partials/sidebar.phtml',
+            'layout/partials/navigation/main-menu' => 'template/backend/adminlte/layout/partials/navigation/main-menu.phtml',
+            'layout/partials/navigation/sub-menu' => 'template/backend/adminlte/layout/partials/navigation/sub-menu.phtml',
             'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
         ]
     ],
