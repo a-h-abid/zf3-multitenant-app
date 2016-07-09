@@ -18,6 +18,7 @@ return [
         'factories' => [
             'localesList' => View\Factory\LocalesListFactory::class,
             'localeDirection' => View\Factory\LocaleDirectionFactory::class,
+            'localeNumber' => View\Factory\LocaleNumberFactory::class,
         ],
         'invokables' => [
             'currentLocale' => View\Helper\CurrentLocale::class,
