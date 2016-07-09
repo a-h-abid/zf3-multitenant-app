@@ -12,6 +12,14 @@ return [
 
     ],
 
+    'service_manager' => [
+
+        'factories' => [
+            'breadcrumb' => Service\BreadcrumbNavigationFactory::class,
+        ]
+
+    ],
+
     'view_helpers' => [
 
         'factories' => [

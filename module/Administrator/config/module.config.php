@@ -7,14 +7,19 @@
 
 namespace Administrator;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'router' => [
         'routes' => include_once __DIR__.'/routes.php',
     ],
+    
+    'navigation' => [
+
+        'breadcrumb' => include_once __DIR__.'/breadcrumb.php',
+
+    ],
+
     'translator' => [
         'locale' => 'en-US',
         'translation_file_patterns' => [

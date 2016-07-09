@@ -1,0 +1,21 @@
+<ol class="breadcrumb">
+    <?php foreach ($this->pages as $key => $page) :
+        $pageArray = $page->toArray();
+        ?>
+        <li class="<?= $page->isActive() ? 'active' : '' ?>">
+            <?php if ( ! $page->isActive()) : ?>
+            <a href="<?= $page->getHref() ?>">
+            <?php endif; ?>
+                
+                <?php if (isset($pageArray['icon-class'])) : ?>
+                <i class="<?= $pageArray['icon-class'] ?>"></i>
+                <?php endif; ?>
+                
+                <?= $this->translate($page->getLabel(), 'template/backend/adminlte') ?>
+            
+            <?php if ( ! $page->isActive()) : ?>
+            </a>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ol>

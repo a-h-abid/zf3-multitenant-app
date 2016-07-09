@@ -1,6 +1,8 @@
 <?php
 
 use Zend\Mvc\I18n\TranslatorFactory;
+use Zend\Navigation\Service\DefaultNavigationFactory;
+use Zend\Navigation\View\NavigationHelperFactory;
 
 /**
  * If you need an environment-specific system or application configuration,
@@ -57,7 +59,7 @@ return [
     ],
 
     // Used to create an own service manager. May contain one or more child arrays.
-    //'service_listener_options' => [
+    // 'service_listener_options' => [
     //     [
     //         'service_manager' => $stringServiceManagerName,
     //         'config_key'      => $stringConfigKey,
@@ -66,16 +68,26 @@ return [
     //     ],
     // ],
 
-   // Initial configuration with which to seed the ServiceManager.
-   // Should be compatible with Zend\ServiceManager\Config.
-   'service_manager' => [
+    // Initial configuration with which to seed the ServiceManager.
+    // Should be compatible with Zend\ServiceManager\Config.
+    'service_manager' => [
 
         'factories' => [
 
             'translator' => TranslatorFactory::class,
 
-        ]
+        ],
 
-   ],
+    ],
+
+    'view_helpers' => [
+
+        'factories' => [
+
+            'navigation' => NavigationHelperFactory::class,
+
+        ],
+
+    ]
 
 ];

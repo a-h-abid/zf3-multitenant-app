@@ -38,6 +38,7 @@ return [
             'layout/partials/headers/tasks' => 'template/backend/adminlte/layout/partials/headers/tasks.phtml',
             'layout/partials/headers/language-switcher' => 'template/backend/adminlte/layout/partials/headers/language-switcher.phtml',
             'layout/partials/headers/user-menu' => 'template/backend/adminlte/layout/partials/headers/user-menu.phtml',
+            'layout/partials/breadcrumb' => 'template/backend/adminlte/layout/partials/breadcrumb.phtml',
             'layout/partials/sidebar' => 'template/backend/adminlte/layout/partials/sidebar.phtml',
             'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
         ]
