@@ -5,9 +5,11 @@
         <span class="label label-warning"><?= $this->currentLocale() ?></span>
     </a>
     <ul class="dropdown-menu">
-        <?php foreach ($this->localesList() as $locale) : ?>
+        <?php foreach ($this->localesList() as $locale) :
+            $route = $this->currentRoute() ?: 'admin/dashboard';
+        ?>
         <li>
-            <a href="<?= $this->localeUrl($this->currentRoute(), [], $locale['locale']) ?>">
+            <a href="<?= $this->localeUrl($route, [], $locale['locale']) ?>">
                 <img src="<?= $this->basePath('assets/common/img/flags/'.$locale['region_code'].'.png') ?>" />
                 <?= $locale['name'] ?>
             </a>

@@ -20,8 +20,11 @@ class CurrentRoute extends AbstractHelper {
         $this->sm = $sm;
         $this->router = $this->sm->get('router');
         $this->request = $this->sm->get('request');
+
+        $routeMatch = $this->router->match($this->request);
         
-        $this->currentRoute = $this->router->match($this->request)->getMatchedRouteName();
+        if ($routeMatch)
+            $this->currentRoute = $routeMatch->getMatchedRouteName();
     }
 
     public function __invoke()
