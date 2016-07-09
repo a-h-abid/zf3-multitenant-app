@@ -19,15 +19,17 @@ class LocalesList extends AbstractHelper {
         $this->sm = $sm;
         $this->configs = $this->sm->get('configuration');
 
+        $rtl_locales = $this->configs['locale-detector']['rtl-locales'];
+
         foreach ($this->configs['locale-detector']['locales'] as $locale)
         {
-            
             $this->localesList[] = array(
                 'locale' => $locale,
                 'name' => Locale::getDisplayName($locale),
                 'language' => Locale::getDisplayLanguage($locale),
                 'region' => Locale::getDisplayRegion($locale),
                 'region_code' => substr($locale, -2, 2),
+                'direction' => in_array($locale, $rtl_locales) ? 'rtl' : 'ltr',
             );
         }
         

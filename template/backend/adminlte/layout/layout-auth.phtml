@@ -1,6 +1,6 @@
 <?= $this->doctype() ?>
 
-<html lang="<?= $this->currentLocale() ?>">
+<html lang="<?= $this->currentLocale() ?>" dir="<?= $this->localeDirection() ?>">
     <head>
         <meta charset="utf-8">
         <?= $this->headTitle($this->siteName())->setSeparator(' - ')->setAutoEscape(false) ?>
