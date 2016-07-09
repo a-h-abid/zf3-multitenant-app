@@ -3,6 +3,7 @@
 namespace Localization;
 
 use Locale;
+use Exception;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\MvcEvent;
 use Zend\Http\PhpEnvironment\Request as HttpRequest;
@@ -35,6 +36,9 @@ class Module {
         $locale = $siteSettings['default-locale'];
         $requestUri = explode('/', $request->getRequestUri());
         $translator =  $sm->get('translator');
+
+        if (!isset($siteSettings['locales']) || empty($siteSettings['locales']))
+            throw new Exception("No Supported locales where set in the /config/site-settings.local.php file.");
 
         if (!in_array($requestUri[1], $siteSettings['locales']))
         {
