@@ -5,7 +5,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><?= $this->siteName() ?></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -21,7 +21,11 @@
           <?= $this->partial('layout/partials/headers/messages') ?>
           <?= $this->partial('layout/partials/headers/notifications') ?>
           <?= $this->partial('layout/partials/headers/tasks') ?>
+
+          <?php if ($this->siteSettings('language-switcher') == true) : ?>
           <?= $this->partial('layout/partials/headers/language-switcher') ?>
+          <?php endif; ?>
+
           <?= $this->partial('layout/partials/headers/user-menu') ?>
 
           <!-- Control Sidebar Toggle Button -->

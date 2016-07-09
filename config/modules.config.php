@@ -32,6 +32,7 @@ return [
     'LocaleDetector',
     'Theme',
     'Helpers',
+    'GlobalSettings',
     'Application',
     'Administrator',
 ];
