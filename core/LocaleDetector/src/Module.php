@@ -39,7 +39,7 @@ class Module {
         if (!in_array($requestUri[1], $localeConfig['locales']))
         {
             $requestUri[0] = $locale;
-            $url = implode('/', $requestUri);
+            $url = '/'.implode('/', $requestUri);
             $response = $e->getResponse();
             $response->getHeaders()->addHeaderLine('Location', $url);
             $response->setStatusCode(302);
