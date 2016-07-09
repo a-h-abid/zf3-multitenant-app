@@ -35,4 +35,5 @@ return [
     'GlobalSettings',
     'Application',
     'Administrator',
+    'User',
 ];

@@ -39,7 +39,8 @@
             "Helpers\\": "core/Helpers/src/",
             "GlobalSettings\\": "core/GlobalSettings/src/",
             "Application\\": "module/Application/src/",
-            "Administrator\\": "module/Administrator/src/"
+            "Administrator\\": "module/Administrator/src/",
+            "User\\": "module/User/src/"
         },
         "files" : [
             "helper/debug.php",
