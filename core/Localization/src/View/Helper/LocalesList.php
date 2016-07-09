@@ -1,6 +1,6 @@
 <?php
 
-namespace LocaleDetector\View\Helper;
+namespace Localization\View\Helper;
 
 use Locale;
 use Zend\View\Helper\AbstractHelper;
@@ -19,9 +19,9 @@ class LocalesList extends AbstractHelper {
         $this->sm = $sm;
         $this->configs = $this->sm->get('configuration');
 
-        $rtl_locales = $this->configs['locale-detector']['rtl-locales'];
+        $rtl_locales = $this->configs['localization']['rtl-locales'];
 
-        foreach ($this->configs['locale-detector']['locales'] as $locale)
+        foreach ($this->configs['site-settings']['locales'] as $locale)
         {
             $this->localesList[] = array(
                 'locale' => $locale,

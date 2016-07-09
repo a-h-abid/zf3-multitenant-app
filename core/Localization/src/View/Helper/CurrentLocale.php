@@ -1,6 +1,6 @@
 <?php
 
-namespace LocaleDetector\View\Helper;
+namespace Localization\View\Helper;
 
 use Locale;
 

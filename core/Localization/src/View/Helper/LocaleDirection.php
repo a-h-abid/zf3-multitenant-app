@@ -1,6 +1,6 @@
 <?php
 
-namespace LocaleDetector\View\Helper;
+namespace Localization\View\Helper;
 
 use Locale;
 use Zend\View\Helper\AbstractHelper;
@@ -19,7 +19,7 @@ class LocaleDirection extends AbstractHelper {
         $this->sm = $sm;
         $this->configs = $this->sm->get('configuration');
 
-        $this->rtl_locales = $this->configs['locale-detector']['rtl-locales'];
+        $this->rtl_locales = $this->configs['localization']['rtl-locales'];
     }
 
     public function __invoke($locale = null)

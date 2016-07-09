@@ -1,17 +1,18 @@
 <?php
 
-namespace LocaleDetector;
+namespace Localization;
 
 return [
 
-    'locale-detector' => [
-        'locales' => [
-            'en-US', 'en-GB', 'bn-BD'
-        ],
+    'localization' => [
         'rtl-locales' => [
             'ar-SA', 'ug-CN', 'ur-PK', 'ar-AE', 'tg-TJ', 'sd-IN', 'fa-IR', 'pa-IN', 'ps-AF', 'ks-IN', 'ku-TR', 'yi-US', 'he-IL', 'mn-MN', 'dv-MV',
         ],
+    ],
+
+    'site-settings' => [
         'default-locale' => 'en-US',
+        'locales' => [],
     ],
 
     'view_helpers' => [
@@ -19,6 +20,7 @@ return [
             'localesList' => View\Factory\LocalesListFactory::class,
             'localeDirection' => View\Factory\LocaleDirectionFactory::class,
             'localeNumber' => View\Factory\LocaleNumberFactory::class,
+            'localeUrl' => View\Factory\LocaleUrlFactory::class,
         ],
         'invokables' => [
             'currentLocale' => View\Helper\CurrentLocale::class,

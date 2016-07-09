@@ -1,6 +1,6 @@
 <?php
 
-namespace LocaleDetector;
+namespace Localization;
 
 use Locale;
 use Zend\EventManager\EventInterface;
@@ -31,12 +31,12 @@ class Module {
             return;
 
         $uri = $request->getUri();
-        $localeConfig = $sm->get('configuration')['locale-detector'];
-        $locale = $localeConfig['default-locale'];
+        $siteSettings = $sm->get('configuration')['site-settings'];
+        $locale = $siteSettings['default-locale'];
         $requestUri = explode('/', $request->getRequestUri());
         $translator =  $sm->get('translator');
 
-        if (!in_array($requestUri[1], $localeConfig['locales']))
+        if (!in_array($requestUri[1], $siteSettings['locales']))
         {
             $requestUri[0] = $locale;
             $url = '/'.implode('/', $requestUri);

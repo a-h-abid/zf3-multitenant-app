@@ -10,6 +10,10 @@ return [
 
         'language-switcher' => true,
 
+        'default-locale' => 'en-US',
+
+        'locales' => ['en-US'],
+
     ],
 
 ];

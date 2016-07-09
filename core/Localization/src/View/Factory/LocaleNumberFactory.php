@@ -1,8 +1,8 @@
 <?php
 
-namespace LocaleDetector\View\Factory;
+namespace Localization\View\Factory;
 
-use LocaleDetector\View\Helper\LocaleNumber;
+use Localization\View\Helper\LocaleNumber;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 

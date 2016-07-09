@@ -1,27 +1,30 @@
 <?php
 
-namespace LocaleDetector\View\Helper;
+namespace Localization\View\Helper;
 
 use Locale;
-use NumberFormatter;
 use Zend\View\Helper\AbstractHelper;
 use Zend\ServiceManager\ServiceManager;
 
-class LocaleNumber extends AbstractHelper {
+class LocaleUrl extends AbstractHelper {
 
     protected $sm;
 
     protected $configs;
+
+    protected $siteName;
 
     public function __construct(ServiceManager $sm)
     {
         $this->sm = $sm;
     }
 
-    public function __invoke($number, $locale = null, $style = NumberFormatter::DECIMAL, $pattern = '')
+    public function __invoke($route, $params = [], $locale = null)
     {
         $locale = $locale ?: Locale::getDefault();
-        return (new NumberFormatter($locale, $style, $pattern))->format($number);
+        $url = $this->getView()->url($route, $params);
+
+        return "/{$locale}{$url}";
     }
 
 }

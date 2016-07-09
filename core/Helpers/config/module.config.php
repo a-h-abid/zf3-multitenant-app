@@ -15,7 +15,6 @@ return [
         'factories' => [
             'currentRoute' => View\Factory\CurrentRouteFactory::class,
             'siteName' => View\Factory\SiteNameFactory::class,
-            'localeUrl' => View\Factory\LocaleUrlFactory::class,
         ],
         
     ],

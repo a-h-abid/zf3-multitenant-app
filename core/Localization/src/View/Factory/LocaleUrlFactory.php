@@ -1,16 +1,16 @@
 <?php
 
-namespace LocaleDetector\View\Factory;
+namespace Localization\View\Factory;
 
-use LocaleDetector\View\Helper\LocalesList;
+use Localization\View\Helper\LocaleUrl;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
-class LocalesListFactory implements FactoryInterface {
+class LocaleUrlFactory implements FactoryInterface {
 
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return new LocalesList($container);
+        return new LocaleUrl($container);
     }
 
 }

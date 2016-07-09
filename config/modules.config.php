@@ -29,7 +29,7 @@ return [
     'Zend\Form',
     // 'Zend\Db',
     'Zend\Cache',
-    'LocaleDetector',
+    'Localization',
     'Theme',
     'Helpers',
     'GlobalSettings',
