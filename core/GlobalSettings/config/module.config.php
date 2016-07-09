@@ -7,7 +7,7 @@ return [
     'site-settings' => [
 
         'site-name' => 'Multi-Tenant',
-
+        'site-title-separator' => ' | ',
         'language-switcher' => true,
 
     ],

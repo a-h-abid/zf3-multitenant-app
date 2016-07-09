@@ -2,7 +2,7 @@
 <html lang="<?= $this->currentLocale() ?>" dir="<?= $this->localeDirection() ?>">
     <head>
         <meta charset="utf-8">
-        <?= $this->headTitle($this->siteName())->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?= $this->headTitle($this->siteName())->setSeparator(' '.$this->siteSettings('site-title-separator').' ')->setAutoEscape(false) ?>
 
         <?= $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
