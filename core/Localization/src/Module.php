@@ -27,29 +27,50 @@ class Module {
         $app = $e->getApplication();
         $sm  = $app->getServiceManager();
         $request = $app->getRequest();
-        
+
         if (!$request instanceOf HttpRequest)
             return;
 
         $uri = $request->getUri();
-        $siteSettings = $sm->get('configuration')['site-settings'];
-        $locale = $siteSettings['default-locale'];
-        $requestUri = explode('/', $request->getRequestUri());
-        $translator =  $sm->get('translator');
+        $config = $sm->get('configuration');
+        $siteSettings = $config['site-settings'];
+        $showDefaultLangUri = $siteSettings['show-default-lang-uri'];
+        $redirect = false;
 
         if (!isset($siteSettings['locales']) || empty($siteSettings['locales']))
             throw new Exception("No Supported locales where set in the /config/site-settings.local.php file.");
 
-        if (!in_array($requestUri[1], $siteSettings['locales']))
+        $locale = $siteSettings['default-locale'];
+        $url = $request->getRequestUri();
+        $requestUri = explode('/', $request->getRequestUri());
+        $translator = $sm->get('translator');
+
+        // If first uri segment locale is same as default locale
+        if ($showDefaultLangUri == false && $requestUri[1] == $locale)
         {
-            $requestUri[0] = $locale;
-            $url = '/'.implode('/', $requestUri);
+            $redirect = true;
+            unset($requestUri[1]);
+        }
+        // If first uri segment locale not matched with supported locales
+        elseif (!in_array($requestUri[1], $siteSettings['locales']))
+        {
+            if ($showDefaultLangUri)
+            {
+                $redirect = true;
+                $requestUri[0] = $locale; // Set Default Locale;
+            }
+        }
+
+        if ($redirect)
+        {
+            $url = '/'.ltrim(implode('/', $requestUri), '/');
+
             $response = $e->getResponse();
             $response->getHeaders()->addHeaderLine('Location', $url);
             $response->setStatusCode(302);
             $response->sendHeaders();
             // When an MvcEvent Listener returns a Response object,
-            // It automatically short-circuit the Application running 
+            // It automatically short-circuit the Application running
             // -> true only for Route Event propagation see Zend\Mvc\Application::run
 
             // To avoid additional processing
@@ -64,14 +85,28 @@ class Module {
             return $response;
         }
 
-        $locale = $requestUri[1];
-        unset($requestUri[1]);
-        $requestUri = implode('/', $requestUri);
-        $requestUri = $requestUri == "" ? "/" : $requestUri;
+        // Parse the URI without Locale
+        if ($showDefaultLangUri)
+        {
+            $locale = $requestUri[1];
+            unset($requestUri[1]);
+        }
+        elseif ( ! $showDefaultLangUri)
+        {
+            if ($locale != $requestUri[1] && in_array($requestUri[1], $siteSettings['locales']))
+            {
+                $locale = $requestUri[1];
+                unset($requestUri[1]);
+            }
+            else
+            {
+                unset($requestUri[0]);
+            }
+        }
 
+        $requestUri = '/'.ltrim(implode('/', $requestUri), '/');
         $uri->setPath($requestUri);
         Locale::setDefault($locale);
         $translator->setLocale($locale);
- 
     }
 }

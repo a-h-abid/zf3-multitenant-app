@@ -11,6 +11,7 @@ return [
     ],
 
     'site-settings' => [
+        'show-default-lang-uri' => true,
         'default-locale' => 'en-US',
         'locales' => [],
     ],

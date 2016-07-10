@@ -10,12 +10,14 @@ return [
 
         'language-switcher' => true,
 
+        'show-default-lang-uri' => true,
+
         'default-locale' => 'en-US',
 
         'locales' => ['en-US'],
 
         'default-currency' => 'USD',
-        
+
         'supported-currencies' => ['USD'],
 
     ],
