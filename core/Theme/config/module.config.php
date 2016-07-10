@@ -56,14 +56,6 @@ return [
 
     ],
 
-    'template' => [
-        'templates_path' => 'template',
-        'defaults' => [
-            'frontend' => 'zf-skeleton',
-            'backend' => 'adminlte'
-        ],
-    ],
-
     'view_helpers' => [
         'factories' => [
             'assetsPath' => View\Factory\AssetsPathFactory::class,
