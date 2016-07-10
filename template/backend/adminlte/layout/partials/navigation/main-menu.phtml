@@ -2,13 +2,13 @@
     $pageArray = $page->toArray();
 ?>
 <li class="treeview <?= $page->isActive() ? 'active' : '' ?>">
-  <a href="<?= '/'.$this->currentLocale().$page->getHref() ?: '#' ?>">
+  <a href="<?= $page->getHref() != '#' ? $this->convertToLocaleUrl($page->getHref()) : '#' ?>">
     <?php if (isset($pageArray['icon-class'])) : ?>
     <i class="fa fa-dashboard"></i>
     <?php endif; ?>
-    
+
     <span><?= $this->translate($page->getLabel()) ?></span>
-    
+
     <?php if ($page->hasPages()) : ?>
     <span class="pull-right-container">
       <i class="fa fa-angle-left pull-right"></i>

@@ -22,6 +22,7 @@ return [
             'localeDirection' => View\Factory\LocaleDirectionFactory::class,
             'localeNumber' => View\Factory\LocaleNumberFactory::class,
             'localeUrl' => View\Factory\LocaleUrlFactory::class,
+            'convertToLocaleUrl' => View\Factory\ConvertToLocaleUrlFactory::class,
         ],
         'invokables' => [
             'currentLocale' => View\Helper\CurrentLocale::class,

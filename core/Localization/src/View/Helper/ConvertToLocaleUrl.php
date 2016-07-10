@@ -6,7 +6,7 @@ use Locale;
 use Zend\View\Helper\AbstractHelper;
 use Zend\ServiceManager\ServiceManager;
 
-class LocaleUrl extends AbstractHelper {
+class ConvertToLocaleUrl extends AbstractHelper {
 
     protected $sm;
 
@@ -18,12 +18,11 @@ class LocaleUrl extends AbstractHelper {
         $this->configs = $this->sm->get('configuration');
     }
 
-    public function __invoke($route, $params = [], $locale = null)
+    public function __invoke($url, $locale = null)
     {
-        $url = $this->getView()->url($route, $params);
-
+        $url = '/'. ltrim($url, '/');
         if ($this->configs['site-settings']['show-default-lang-uri'])
-            $locale = '/'.($locale ?: Locale::getDefault());
+            $locale = '/' . ($locale ?: Locale::getDefault());
         else
             $locale = '';
 
