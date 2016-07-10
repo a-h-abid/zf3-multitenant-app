@@ -11,30 +11,4 @@
  * credentials from accidentally being committed into version control.
  */
 
-return [
-
-    'template' => [
-        
-        'templates_path' => 'template',
-        
-        'defaults' => [
-            'backend'  => 'adminlte',
-            'frontend' => 'zf-skeleton',
-        ],
-        
-        'settings' => [
-            
-            'backend' => [
-                'adminlte' => [
-                    'show-header-messages' => false,
-                    'show-header-notifications' => false,
-                    'show-header-tasks' => false,
-                    'show-control-sidebar' => false,
-                ],
-            ],
-
-        ],
-
-    ],
-
-];
+return [];

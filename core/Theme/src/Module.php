@@ -58,12 +58,12 @@ class Module
 
         $templateType = $isBackend ? 'backend' : 'frontend';
 
-        $themeConfig = require $config['template']['templates_path'].'/'.$templateType.'/'.$config['template']['defaults'][$templateType].'/config/config.php';
+        $themeConfig = require $config['template']['defaults'][$templateType]['path'].'/config/config.php';
 
         $map = $services->get('ViewTemplateMapResolver');
         $map->merge($themeConfig['view_manager']['template_map']);
 
-        self::$templateName = $config['template']['defaults'][$templateType];
+        self::$templateName = $config['template']['defaults'][$templateType]['name'];
         self::$templateType = $templateType;
         $this->setTemplateSettings($config, $themeConfig);
 

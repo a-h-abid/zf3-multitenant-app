@@ -13,6 +13,7 @@ if (getenv('APPLICATION_ENV') === 'development') {
 
 define('PUBLIC_PATH', __DIR__);
 define('BASE_PATH', realpath(__DIR__.'/..'));
+define('TENANT_PATH', realpath(__DIR__.'/../tenant/'.$_SERVER['SERVER_NAME']));
 
 /**
  * This makes our life easier when dealing with paths. Everything is relative
@@ -42,14 +43,20 @@ if (! class_exists(Application::class)) {
 }
 
 // Retrieve configuration
-$appConfig = require __DIR__ . '/../config/application.config.php';
-if (file_exists(__DIR__ . '/../config/development.config.php')) {
-    $appConfig = ArrayUtils::merge($appConfig, require __DIR__ . '/../config/development.config.php');
+$appConfig = require __DIR__.'/../config/application.config.php';
+if (file_exists(__DIR__.'/../config/development.config.php')) {
+    $appConfig = ArrayUtils::merge($appConfig, require __DIR__.'/../config/development.config.php');
 }
 
 // Set Config For Tenent
 if (file_exists(__DIR__.'/../tenant/'.$_SERVER['SERVER_NAME'].'/config/application.config.php')) {
     $appConfig = ArrayUtils::merge($appConfig, require __DIR__.'/../tenant/'.$_SERVER['SERVER_NAME'].'/config/application.config.php');
+}
+
+if (file_exists(__DIR__.'/../tenant/'.$_SERVER['SERVER_NAME'].'/config/site-settings.config.php')) {
+    $appConfig = ArrayUtils::merge($appConfig, require __DIR__.'/../tenant/'.$_SERVER['SERVER_NAME'].'/config/site-settings.config.php');
+} else {
+    $appConfig = ArrayUtils::merge($appConfig, require __DIR__.'/../config/site-settings.config.php');
 }
 
 // Run the application!
