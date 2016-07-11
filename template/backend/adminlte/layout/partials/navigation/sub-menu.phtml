@@ -2,12 +2,13 @@
     <?php foreach ($this->pages as $key => $page) :
         $pageArray = $page->toArray();
     ?>
-    <li class="<?= $page->isActive() ? 'active' : '' ?>">
+    <li class="<?= $page->isActive() ? 'active current-menu' : '' ?> <?= $page->hasPages() ? 'treeview-item' : '' ?>">
         <a href="<?= $page->getHref() != '#' ? $this->convertToLocaleUrl($page->getHref()) : '#' ?>">
             <?php if (isset($pageArray['icon-class'])) : ?>
             <i class="fa fa-circle-o"></i>
             <?php endif; ?>
-            <?= $this->translate($page->getLabel()) ?>
+
+            <span class="menu-name"><?= $this->translate($page->getLabel()) ?></span>
 
             <?php if ($page->hasPages()) : ?>
             <span class="pull-right-container">

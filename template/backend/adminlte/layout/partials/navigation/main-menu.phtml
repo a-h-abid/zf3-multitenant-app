@@ -1,7 +1,7 @@
 <?php foreach ($this->container as $key => $page) :
     $pageArray = $page->toArray();
 ?>
-<li class="treeview <?= $page->isActive() ? 'active' : '' ?>">
+<li class="treeview <?= $page->isActive() ? 'active current-menu' : '' ?>">
   <a href="<?= $page->getHref() != '#' ? $this->convertToLocaleUrl($page->getHref()) : '#' ?>">
     <?php if (isset($pageArray['icon-class'])) : ?>
     <i class="fa fa-dashboard"></i>
