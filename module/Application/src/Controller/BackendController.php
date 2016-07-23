@@ -10,4 +10,9 @@ abstract class BackendController extends BaseController
     {
         return parent::onDispatch($e);
     }
+
+    public function viewList($data = [])
+    {
+        return $this->view('layout/pages/list', $data);
+    }
 }

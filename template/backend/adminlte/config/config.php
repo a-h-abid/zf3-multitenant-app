@@ -43,6 +43,7 @@ return [
             'layout/partials/navigation/main-menu' => 'template/backend/adminlte/layout/partials/navigation/main-menu.phtml',
             'layout/partials/navigation/sub-menu' => 'template/backend/adminlte/layout/partials/navigation/sub-menu.phtml',
             'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
+            'layout/pages/list' => 'template/backend/adminlte/layout/pages/list.phtml',
         ]
     ],
 ];

@@ -8,7 +8,8 @@ class UserController extends BackendController
 {
     public function listAction()
     {
-        return $this->view('backend/user/list');
+        $grid = new \User\Grid\User;
+        return $this->setTitle('Users List')->viewList(compact('grid'));
     }
 
     public function addAction()
