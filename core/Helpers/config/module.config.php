@@ -24,6 +24,7 @@ return [
             'currentRoute' => View\Factory\CurrentRouteFactory::class,
             'currentRouteParams' => View\Factory\CurrentRouteParamsFactory::class,
             'siteName' => View\Factory\SiteNameFactory::class,
+            'formElementPartial' => View\Factory\FormElementPartialFactory::class,
         ],
 
     ],

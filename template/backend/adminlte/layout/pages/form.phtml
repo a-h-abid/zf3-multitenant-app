@@ -1,1 +1,49 @@
-<h1>Form</h1>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+
+            <div class="box-header with-border">
+                <h3 class="box-title"><?= $this->pageTitle() ?></h3>
+            </div>
+
+            <form class="form-horizontal" method="<?= $form->getAttribute('method') ?>" action="<?= $form->getAttribute('action') ?>">
+
+                <div class="box-body">
+
+                    <?php foreach ($form as $field) : ?>
+
+                    <div class="form-group">
+
+                        <label class="col-sm-3 control-label"><?= $field->getLabel() ?></label>
+
+                        <div class="col-sm-9">
+                            <?php
+
+                            echo $this->formElementPartial($field);
+
+                            ?>
+
+                            <?php if ($help = $field->getOption('help')) : ?>
+                            <span class="help-block text-teal"><?= $help ?></span>
+                            <?php endif; ?>
+
+                            <?= $this->formElementErrors()->render($field, ['class' => 'help-block error-block']) ?>
+                        </div>
+                    </div>
+
+                    <?php endforeach; ?>
+
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-success pull-right">Save</button>
+                </div>
+                <!-- /.box-footer -->
+
+            </form>
+
+        </div>
+    </div>
+</div>

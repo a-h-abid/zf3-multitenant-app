@@ -4,6 +4,7 @@ namespace User\Controller\Backend\Factory;
 
 use User\Controller\Backend\UserController;
 use User\Grid\UserGrid;
+use User\Form\UserForm;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -17,6 +18,11 @@ class UserControllerFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return new UserController($container->get(UserGrid::class));
+        $formManager = $container->get('FormElementManager');
+
+        return new UserController(
+            $container->get(UserGrid::class),
+            $formManager->get(UserForm::class)
+        );
     }
 }

@@ -1,0 +1,26 @@
+<?php
+
+$field->setAttribute('class','form-control');
+
+$addon_prefix = $field->getOption('addon-prefix');
+$addon_suffix = $field->getOption('addon-suffix');
+
+?>
+
+<?php if ($addon_prefix || $addon_suffix) : ?>
+<div class="input-group">
+<?php endif; ?>
+
+    <?php if ($addon_prefix) : ?>
+    <span class="input-group-addon"><?= $addon_prefix ?></span>
+    <?php endif; ?>
+
+    <?= $this->formElement($field) ?>
+
+    <?php if ($addon_suffix) : ?>
+    <span class="input-group-addon"><?= $addon_suffix ?></span>
+    <?php endif; ?>
+
+<?php if ($addon_prefix || $addon_suffix) : ?>
+</div>
+<?php endif; ?>

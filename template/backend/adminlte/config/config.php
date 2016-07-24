@@ -32,6 +32,7 @@ return [
             'error/index'   => 'template/backend/adminlte/error/index.phtml',
             'layout/layout-auth' => 'template/backend/adminlte/layout/layout-auth.phtml',
             'layout/layout-guest' => 'template/backend/adminlte/layout/layout-guest.phtml',
+
             'layout/partials/header' => 'template/backend/adminlte/layout/partials/header.phtml',
             'layout/partials/headers/messages' => 'template/backend/adminlte/layout/partials/headers/messages.phtml',
             'layout/partials/headers/notifications' => 'template/backend/adminlte/layout/partials/headers/notifications.phtml',
@@ -43,16 +44,26 @@ return [
             'layout/partials/navigation/main-menu' => 'template/backend/adminlte/layout/partials/navigation/main-menu.phtml',
             'layout/partials/navigation/sub-menu' => 'template/backend/adminlte/layout/partials/navigation/sub-menu.phtml',
             'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
+
             'layout/pages/login' => 'template/backend/adminlte/layout/pages/login.phtml',
             'layout/pages/js/login' => 'template/backend/adminlte/layout/pages/js/login.js',
             'layout/pages/list' => 'template/backend/adminlte/layout/pages/list.phtml',
             'layout/pages/js/list' => 'template/backend/adminlte/layout/pages/js/list.js',
-            'layout/pages/form' => 'template/backend/adminlte/layout/pages/form.phtml',
+
             'layout/pages/dashboard' => 'template/backend/adminlte/layout/pages/dashboard.phtml',
             'layout/pages/dashboard-partials/featured-stats' => 'template/backend/adminlte/layout/pages/dashboard-partials/featured-stats.phtml',
             'layout/pages/dashboard-partials/monthly-percentage-stats' => 'template/backend/adminlte/layout/pages/dashboard-partials/monthly-percentage-stats.phtml',
             'layout/pages/dashboard-partials/monthly-sales-report' => 'template/backend/adminlte/layout/pages/dashboard-partials/monthly-sales-report.phtml',
             'layout/pages/dashboard-partials/visitors-report' => 'template/backend/adminlte/layout/pages/dashboard-partials/visitors-report.phtml',
+
+            'layout/pages/form' => 'template/backend/adminlte/layout/pages/form.phtml',
+            'layout/pages/form-partials/field-group' => 'template/backend/adminlte/layout/pages/form-partials/field-group.phtml',
+            'layout/pages/form-partials/zend-form-element-text' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
+            'layout/pages/form-partials/zend-form-element-email' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
+            'layout/pages/form-partials/zend-form-element-date' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
+            'layout/pages/form-partials/zend-form-element-password' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
+            'layout/pages/form-partials/zend-form-element-checkbox' => 'template/backend/adminlte/layout/pages/form-partials/zend-form-element-checkbox.phtml',
+            'layout/pages/form-partials/zend-form-element-radio' => 'template/backend/adminlte/layout/pages/form-partials/zend-form-element-radio.phtml',
         ]
     ],
 ];

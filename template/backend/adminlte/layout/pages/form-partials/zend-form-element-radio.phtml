@@ -1,0 +1,15 @@
+<?php
+
+$value_options = $field->getValueOptions();
+
+foreach ($value_options as $value_option_key => $value_option) :
+
+?>
+
+<div class="radio">
+    <label>
+        <input type="radio" name="<?= $field->getName() ?>" value="<?= $value_option_key ?>" /> <?= $value_option ?>
+    </label>
+</div>
+
+<?php endforeach;

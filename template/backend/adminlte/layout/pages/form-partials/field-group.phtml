@@ -1,0 +1,13 @@
+<?php
+
+$columnsClass = ceil(12 / $elementsCount);
+
+?><div class="col-sm-<?= $columnsClass ?>">
+
+    <label><?= $field->getLabel() ?></label>
+
+    <?= $this->formElementPartial($field) ?>
+
+    <?= $this->formElementErrors()->render($field, ['class' => 'help-block error-block']) ?>
+
+</div>

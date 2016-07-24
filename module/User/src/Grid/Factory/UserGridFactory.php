@@ -12,7 +12,7 @@ class UserGridFactory implements FactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param null|array $options
-     * @return UserController
+     * @return UserGrid
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
