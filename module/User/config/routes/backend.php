@@ -38,6 +38,9 @@ return [
                         'options' => [
                             'route'    => '/edit/:id',
                             'verb' => 'get',
+                            'constraints' => [
+                                'id' => '[0-9]+'
+                            ],
                             'defaults' => [
                                 'controller' => Controller\Backend\UserController::class,
                                 'action'     => 'edit',

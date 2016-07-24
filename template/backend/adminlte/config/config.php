@@ -48,7 +48,6 @@ return [
             'layout/pages/list' => 'template/backend/adminlte/layout/pages/list.phtml',
             'layout/pages/js/list' => 'template/backend/adminlte/layout/pages/js/list.js',
             'layout/pages/form' => 'template/backend/adminlte/layout/pages/form.phtml',
-
             'layout/pages/dashboard' => 'template/backend/adminlte/layout/pages/dashboard.phtml',
             'layout/pages/dashboard-partials/featured-stats' => 'template/backend/adminlte/layout/pages/dashboard-partials/featured-stats.phtml',
             'layout/pages/dashboard-partials/monthly-percentage-stats' => 'template/backend/adminlte/layout/pages/dashboard-partials/monthly-percentage-stats.phtml',

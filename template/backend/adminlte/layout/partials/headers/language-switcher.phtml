@@ -7,9 +7,10 @@
     <ul class="dropdown-menu">
         <?php foreach ($this->localesList() as $locale) :
             $route = $this->currentRoute() ?: 'admin/dashboard';
+            $routeParams = $this->currentRouteParams() ?: [];
         ?>
         <li>
-            <a href="<?= $this->localeUrl($route, [], $locale['locale']) ?>">
+            <a href="<?= $this->localeUrl($route, $routeParams, $locale['locale']) ?>">
                 <img src="<?= $this->basePath('assets/common/img/flags/'.$locale['region_code'].'.png') ?>" />
                 <?= $locale['name'] ?>
             </a>

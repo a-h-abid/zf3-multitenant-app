@@ -11,7 +11,11 @@ return [
                     'add' => [
                         'label' => 'Add',
                         'route' => 'admin/user/add',
-                    ]
+                    ],
+                    'edit' => [
+                        'label' => 'Edit',
+                        'route' => 'admin/user/edit',
+                    ],
                 ]
             ],
         ]

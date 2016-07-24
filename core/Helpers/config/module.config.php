@@ -22,6 +22,7 @@ return [
 
         'factories' => [
             'currentRoute' => View\Factory\CurrentRouteFactory::class,
+            'currentRouteParams' => View\Factory\CurrentRouteParamsFactory::class,
             'siteName' => View\Factory\SiteNameFactory::class,
         ],
 
