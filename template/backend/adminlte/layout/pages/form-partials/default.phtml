@@ -5,22 +5,34 @@ $field->setAttribute('class','form-control');
 $addon_prefix = $field->getOption('addon-prefix');
 $addon_suffix = $field->getOption('addon-suffix');
 
+$input_size = $field->getOption('input-size');
+
 ?>
 
-<?php if ($addon_prefix || $addon_suffix) : ?>
-<div class="input-group">
+<?php if ($input_size) : ?>
+<div class="col-sm-<?= $input_size ?>">
 <?php endif; ?>
 
-    <?php if ($addon_prefix) : ?>
-    <span class="input-group-addon"><?= $addon_prefix ?></span>
+    <?php if ($addon_prefix || $addon_suffix) : ?>
+    <div class="input-group">
     <?php endif; ?>
 
-    <?= $this->formElement($field) ?>
+        <?php if ($addon_prefix) : ?>
+        <span class="input-group-addon"><?= $addon_prefix ?></span>
+        <?php endif; ?>
 
-    <?php if ($addon_suffix) : ?>
-    <span class="input-group-addon"><?= $addon_suffix ?></span>
+
+            <?= $this->formElement($field) ?>
+
+
+        <?php if ($addon_suffix) : ?>
+        <span class="input-group-addon"><?= $addon_suffix ?></span>
+        <?php endif; ?>
+
+    <?php if ($addon_prefix || $addon_suffix) : ?>
+    </div>
     <?php endif; ?>
 
-<?php if ($addon_prefix || $addon_suffix) : ?>
+<?php if ($input_size) : ?>
 </div>
 <?php endif; ?>

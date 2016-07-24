@@ -57,11 +57,13 @@ return [
             'layout/pages/dashboard-partials/visitors-report' => 'template/backend/adminlte/layout/pages/dashboard-partials/visitors-report.phtml',
 
             'layout/pages/form' => 'template/backend/adminlte/layout/pages/form.phtml',
+            'layout/pages/js/form' => 'template/backend/adminlte/layout/pages/js/form.js',
             'layout/pages/form-partials/field-group' => 'template/backend/adminlte/layout/pages/form-partials/field-group.phtml',
             'layout/pages/form-partials/zend-form-element-text' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
             'layout/pages/form-partials/zend-form-element-email' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
             'layout/pages/form-partials/zend-form-element-date' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
             'layout/pages/form-partials/zend-form-element-password' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
+            'layout/pages/form-partials/zend-form-element-select' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
             'layout/pages/form-partials/zend-form-element-checkbox' => 'template/backend/adminlte/layout/pages/form-partials/zend-form-element-checkbox.phtml',
             'layout/pages/form-partials/zend-form-element-radio' => 'template/backend/adminlte/layout/pages/form-partials/zend-form-element-radio.phtml',
         ]

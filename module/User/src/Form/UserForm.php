@@ -10,6 +10,7 @@ use Zend\Form\Element\Password;
 use Zend\Form\Element\Date;
 use Zend\Form\Element\Checkbox;
 use Zend\Form\Element\Radio;
+use Zend\Form\Element\Select;
 
 class UserForm extends ZendForm {
 
@@ -31,6 +32,7 @@ class UserForm extends ZendForm {
                 'placeholder' => 'Enter Username / Email',
             ],
             'options' => [
+                'input-size' => '6',
                 'label' => 'Username',
                 'help' => 'Your username / email you will use in this application',
                 'addon-prefix' => '<i class="fa fa-envelope"></i>',
@@ -44,6 +46,7 @@ class UserForm extends ZendForm {
                 'placeholder' => 'Enter Password',
             ],
             'options' => [
+                'input-size' => '4',
                 'label' => 'Password',
                 'addon-suffix' => '<i class="fa fa-lock"></i>',
             ]
@@ -56,6 +59,7 @@ class UserForm extends ZendForm {
                 'placeholder' => 'Enter Date of Birth',
             ],
             'options' => [
+                'input-size' => '4',
                 'label' => 'Date of Birth',
                 'help' => 'The date you were born in',
             ]
@@ -75,9 +79,26 @@ class UserForm extends ZendForm {
             'type' => Radio::class,
             'options' => [
                 'label' => 'Is Banned',
+                'inline' => true,
                 'value_options' => [
                     '0' => 'No',
                     '1' => 'Yes',
+                ]
+            ],
+        ]);
+
+        $this->add([
+            'name' => 'role',
+            'type' => Select::class,
+            'options' => [
+                'input-size' => '6',
+                'label' => 'Role',
+                'empty_option' => '-- Select --',
+                'value_options' => [
+                    'admin' => 'Admin',
+                    'moderator' => 'Moderator',
+                    'manager' => 'Manager',
+                    'staff' => 'Staff',
                 ]
             ],
         ]);

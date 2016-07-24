@@ -6,9 +6,9 @@ foreach ($value_options as $value_option_key => $value_option) :
 
 ?>
 
-<div class="radio">
+<div class="radio<?= $field->getOption('inline') ? '-inline' : '' ?>">
     <label>
-        <input type="radio" name="<?= $field->getName() ?>" value="<?= $value_option_key ?>" /> <?= $value_option ?>
+        <input type="radio" name="<?= $field->getName() ?>" value="<?= $value_option_key ?>" <?= $field->getValue() == $value_option_key ? 'checked="checked"' : '' ?> /> <?= $value_option ?>
     </label>
 </div>
 
