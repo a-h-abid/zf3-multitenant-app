@@ -2,7 +2,7 @@
 
 namespace User\Grid;
 
-class User {
+class UserGrid {
 
     public function columns()
     {
