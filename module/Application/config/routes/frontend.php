@@ -2,8 +2,8 @@
 
 namespace Application;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
+use AbdPlatform\Extend\Router\Http\Literal;
+use AbdPlatform\Extend\Router\Http\Segment;
 
 return [
 
@@ -11,6 +11,7 @@ return [
         'type' => Literal::class,
         'options' => [
             'route'    => '/',
+            'verb' => 'get',
             'defaults' => [
                 'controller' => Controller\IndexController::class,
                 'action'     => 'index',
@@ -21,6 +22,7 @@ return [
         'type'    => Literal::class,
         'options' => [
             'route'    => '/about',
+            'verb' => 'get',
             'defaults' => [
                 'controller'    => Controller\IndexController::class,
                 'action'        => 'about',
@@ -31,11 +33,12 @@ return [
         'type'    => Segment::class,
         'options' => [
             'route'    => '/{color}',
+            'verb' => 'get',
             'defaults' => [
                 'controller'    => Controller\IndexController::class,
                 'action'        => 'color',
             ],
         ],
-    ],      
+    ],
 
 ];

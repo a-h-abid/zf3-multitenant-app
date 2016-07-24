@@ -34,6 +34,7 @@
     },
     "autoload": {
         "psr-4": {
+            "AbdPlatform\\": "core/AbdPlatform/src/",
             "Localization\\": "core/Localization/src/",
             "Theme\\": "core/Theme/src/",
             "Helpers\\": "core/Helpers/src/",

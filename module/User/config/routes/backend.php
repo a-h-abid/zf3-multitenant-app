@@ -2,8 +2,8 @@
 
 namespace User;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
+use AbdPlatform\Extend\Router\Http\Literal;
+use AbdPlatform\Extend\Router\Http\Segment;
 
 return [
 
@@ -13,6 +13,7 @@ return [
                 'type' => Literal::class,
                 'options' => [
                     'route'    => '/user',
+                    'verb' => 'get',
                     'defaults' => [
                         'controller' => Controller\Backend\UserController::class,
                         'action'     => 'list',
@@ -24,6 +25,7 @@ return [
                         'type' => Literal::class,
                         'options' => [
                             'route'    => '/add',
+                            'verb' => 'get',
                             'defaults' => [
                                 'controller' => Controller\Backend\UserController::class,
                                 'action'     => 'add',
@@ -35,9 +37,22 @@ return [
                         'type' => Segment::class,
                         'options' => [
                             'route'    => '/edit/:id',
+                            'verb' => 'get',
                             'defaults' => [
                                 'controller' => Controller\Backend\UserController::class,
                                 'action'     => 'edit',
+                            ],
+                        ],
+                        'may_terminate' => true,
+                    ],
+                    'delete' => [
+                        'type' => Literal::class,
+                        'options' => [
+                            'route'    => '/delete',
+                            'verb' => 'delete',
+                            'defaults' => [
+                                'controller' => Controller\Backend\UserController::class,
+                                'action'     => 'delete',
                             ],
                         ],
                         'may_terminate' => true,

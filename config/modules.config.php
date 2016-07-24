@@ -29,7 +29,8 @@ return [
     'Zend\Form',
     // 'Zend\Db',
     'Zend\Cache',
-    
+
+    'AbdPlatform',
     'Localization',
     'Theme',
     'Helpers',
