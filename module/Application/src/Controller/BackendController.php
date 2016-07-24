@@ -15,4 +15,9 @@ abstract class BackendController extends BaseController
     {
         return $this->view('layout/pages/list', $data);
     }
+
+    public function viewForm($data = [])
+    {
+        return $this->view('layout/pages/form', $data);
+    }
 }

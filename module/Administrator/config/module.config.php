@@ -14,7 +14,7 @@ return [
     'router' => [
         'routes' => include_once __DIR__.'/routes.php',
     ],
-    
+
     'navigation' => [
         'breadcrumb' => include_once __DIR__.'/breadcrumb.php',
         'backend-menu' => include_once __DIR__.'/backend-menu.php',
@@ -48,18 +48,6 @@ return [
         'factories' => [
             'backend-menu' => Service\BackendMenuNavigationFactory::class,
         ]
-    ],
-
-    'view_manager' => [
-        'template_map' => [
-            'administrator/login/index' => __DIR__ . '/../view/administrator/login/index.phtml',
-            'administrator/login/js/login' => __DIR__ . '/../view/administrator/login/js/login.js',
-            'administrator/dashboard/index' => __DIR__ . '/../view/administrator/dashboard/index.phtml',
-            'administrator/dashboard/dashboard-partials/featured-stats' => __DIR__ . '/../view/administrator/dashboard/dashboard-partials/featured-stats.phtml',
-            'administrator/dashboard/dashboard-partials/monthly-percentage-stats' => __DIR__ . '/../view/administrator/dashboard/dashboard-partials/monthly-percentage-stats.phtml',
-            'administrator/dashboard/dashboard-partials/monthly-sales-report' => __DIR__ . '/../view/administrator/dashboard/dashboard-partials/monthly-sales-report.phtml',
-            'administrator/dashboard/dashboard-partials/visitors-report' => __DIR__ . '/../view/administrator/dashboard/dashboard-partials/visitors-report.phtml',
-        ],
     ],
 
 ];

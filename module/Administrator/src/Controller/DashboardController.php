@@ -8,6 +8,6 @@ class DashboardController extends BackendController
 {
     public function indexAction()
     {
-        return $this->view('administrator/dashboard/index');
+        return $this->setTitle('Dashboard')->view('layout/pages/dashboard');
     }
 }

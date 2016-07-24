@@ -8,6 +8,6 @@ class LoginController extends BackendController
 {
     public function indexAction()
     {
-        return $this->view('administrator/login/index');
+        return $this->setTitle('Login')->view('layout/pages/login');
     }
 }

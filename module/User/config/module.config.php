@@ -27,11 +27,4 @@ return [
         ],
     ],
 
-    'view_manager' => [
-        'template_map' => [
-            'backend/user/list' => __DIR__ . '/../view/backend/user/list.phtml',
-            'backend/user/form' => __DIR__ . '/../view/backend/user/form.phtml',
-        ],
-    ],
-
 ];

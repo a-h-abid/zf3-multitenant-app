@@ -6,7 +6,13 @@ return [
         'pages' => [
             'user' => [
                 'label' => 'Users',
-                'route' => 'admin/user'
+                'route' => 'admin/user',
+                'pages' => [
+                    'add' => [
+                        'label' => 'Add',
+                        'route' => 'admin/user/add',
+                    ]
+                ]
             ],
         ]
     ],

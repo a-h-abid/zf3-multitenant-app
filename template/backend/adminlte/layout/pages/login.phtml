@@ -1,9 +1,14 @@
 <div class="login-logo">
-    <a href="#"><b><?= $this->siteName() ?></b> Administrator</a>
+    <a href="#">
+        <b><?= $this->siteName() ?></b>
+        <br>
+        <?= $this->translate('Administrator','template/backend/adminlte') ?>
+    </a>
 </div>
 <!-- /.login-logo -->
+
 <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg"><?= $this->tranlate('Sign in to start your session', 'template/backend/adminlte') ?></p>
 
     <form action="../../index2.html" method="post">
         <div class="form-group has-feedback">
@@ -18,23 +23,23 @@
             <div class="col-xs-8">
                 <div class="checkbox icheck">
                     <label>
-                        <input type="checkbox"> Remember Me
+                        <input type="checkbox"> <?= $this->translate('Remember Me', 'template/backend/adminlte') ?>
                     </label>
                 </div>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                <button type="submit" class="btn btn-primary btn-block btn-flat"><?= $this->translate('Sign In', 'template/backend/adminlte') ?></button>
             </div>
             <!-- /.col -->
         </div>
     </form>
 
-    <a href="#">I forgot my password</a>
+    <a href="#"><?= $this->translate('I forgot my password', 'template/backend/adminlte') ?></a>
 
 </div>
 <!-- /.login-box-body -->
 
 <?php
 
-$this->inlineScript()->appendScript($this->partial('administrator/login/js/login'));
+$this->inlineScript()->appendScript($this->partial('layout/pages/js/login'));

@@ -1,14 +1,9 @@
-<?php
-    
-$this->headTitle()->set($this->translate('Dashboard', 'Administrator'));
-
-?>
 <div class="row">
-    <?= $this->partial('administrator/dashboard/dashboard-partials/featured-stats') ?>
+    <?= $this->partial('layout/pages/dashboard-partials/featured-stats') ?>
 </div>
 
 <div class="row">
-    <?= $this->partial('administrator/dashboard/dashboard-partials/monthly-sales-report') ?>
+    <?= $this->partial('layout/pages/dashboard-partials/monthly-sales-report') ?>
 </div>
 
 
@@ -16,12 +11,12 @@ $this->headTitle()->set($this->translate('Dashboard', 'Administrator'));
 <div class="row">
     <!-- Left col -->
     <div class="col-md-8">
-        <?= $this->partial('administrator/dashboard/dashboard-partials/visitors-report') ?>
+        <?= $this->partial('layout/pages/dashboard-partials/visitors-report') ?>
     </div>
-    
+
     <!-- Right col -->
     <div class="col-md-4">
-        <?= $this->partial('administrator/dashboard/dashboard-partials/monthly-percentage-stats') ?>
+        <?= $this->partial('layout/pages/dashboard-partials/monthly-percentage-stats') ?>
     </div>
 </div>
 <!-- /.row -->

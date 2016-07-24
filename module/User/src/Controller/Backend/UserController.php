@@ -22,11 +22,11 @@ class UserController extends BackendController
 
     public function addAction()
     {
-        return $this->view('backend/user/form');
+        return $this->setTitle('Add User')->viewForm();
     }
 
     public function editAction()
     {
-        return $this->view('backend/user/form');
+        return $this->setTitle('Edit User')->viewForm();
     }
 }

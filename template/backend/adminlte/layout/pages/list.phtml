@@ -52,16 +52,6 @@
 </div>
 
 
-<script>
-$(function () {
-    $('#grid-panel').DataTable({
-        "responsive": true,
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false
-    });
-});
-</script>
+<?php
+
+$this->inlineScript()->appendScript($this->partial('layout/pages/js/list'));

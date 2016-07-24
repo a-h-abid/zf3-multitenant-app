@@ -43,7 +43,17 @@ return [
             'layout/partials/navigation/main-menu' => 'template/backend/adminlte/layout/partials/navigation/main-menu.phtml',
             'layout/partials/navigation/sub-menu' => 'template/backend/adminlte/layout/partials/navigation/sub-menu.phtml',
             'layout/partials/control-sidebar' => 'template/backend/adminlte/layout/partials/control-sidebar.phtml',
+            'layout/pages/login' => 'template/backend/adminlte/layout/pages/login.phtml',
+            'layout/pages/js/login' => 'template/backend/adminlte/layout/pages/js/login.js',
             'layout/pages/list' => 'template/backend/adminlte/layout/pages/list.phtml',
+            'layout/pages/js/list' => 'template/backend/adminlte/layout/pages/js/list.js',
+            'layout/pages/form' => 'template/backend/adminlte/layout/pages/form.phtml',
+
+            'layout/pages/dashboard' => 'template/backend/adminlte/layout/pages/dashboard.phtml',
+            'layout/pages/dashboard-partials/featured-stats' => 'template/backend/adminlte/layout/pages/dashboard-partials/featured-stats.phtml',
+            'layout/pages/dashboard-partials/monthly-percentage-stats' => 'template/backend/adminlte/layout/pages/dashboard-partials/monthly-percentage-stats.phtml',
+            'layout/pages/dashboard-partials/monthly-sales-report' => 'template/backend/adminlte/layout/pages/dashboard-partials/monthly-sales-report.phtml',
+            'layout/pages/dashboard-partials/visitors-report' => 'template/backend/adminlte/layout/pages/dashboard-partials/visitors-report.phtml',
         ]
     ],
 ];
