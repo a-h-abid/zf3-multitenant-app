@@ -2,7 +2,7 @@
 
 namespace User\Form;
 
-use User\Form\UserForm\FullNameFieldset;
+use User\Form\UserForm\FullNameFieldgroup;
 use Zend\Form\Form as ZendForm;
 use Zend\Form\Element\Text;
 use Zend\Form\Element\Email;
@@ -18,7 +18,7 @@ class UserForm extends ZendForm {
     {
         $this->add([
             'name' => 'fullname',
-            'type' => FullNameFieldset::class,
+            'type' => FullNameFieldgroup::class,
             'options' => [
                 'label' => 'Full Name',
                 'help' => 'Your full name as in your passport',

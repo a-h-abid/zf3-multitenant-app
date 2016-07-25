@@ -2,6 +2,7 @@
 
 namespace Helpers\View\Helper;
 
+use AbdPlatform\Extend\Form\FieldgroupInterface;
 use Zend\Form\ElementInterface;
 use Zend\Form\FieldsetInterface;
 use Zend\View\Helper\AbstractHelper;
@@ -11,7 +12,7 @@ class FormElementPartial extends AbstractHelper {
 
     public function __invoke(ElementInterface $element)
     {
-        if ($element instanceOf FieldsetInterface)
+        if ($element instanceOf FieldgroupInterface && !($element instanceOf FieldsetInterface))
         {
             $elementsCount = count($element);
 
@@ -23,7 +24,7 @@ class FormElementPartial extends AbstractHelper {
         }
     }
 
-    private function fieldGroupRenderer(ElementInterface $fields, $elementsCount)
+    private function fieldGroupRenderer(FieldgroupInterface $fields, $elementsCount)
     {
         $viewStr = '';
         $layoutPath = 'layout/pages/form-partials/field-group';

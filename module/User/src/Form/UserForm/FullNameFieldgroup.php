@@ -2,10 +2,10 @@
 
 namespace User\Form\UserForm;
 
-use Zend\Form\Fieldset;
+use AbdPlatform\Extend\Form\Fieldgroup;
 use Zend\Form\Element\Text;
 
-class FullNameFieldset extends Fieldset {
+class FullNameFieldgroup extends Fieldgroup {
 
     public function init()
     {
