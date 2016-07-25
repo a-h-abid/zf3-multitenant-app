@@ -25,12 +25,18 @@ class UserController extends BackendController
 
     public function addAction()
     {
+        $this->form->setAttribute('method','post')
+                    ->setAttribute('action',$this->url()->fromRoute('admin/user/insert'));
+
         return $this->setTitle('Add User')
                     ->viewForm(['form' => $this->form]);
     }
 
     public function editAction()
     {
+        $this->form->setAttribute('method','put')
+                    ->setAttribute('action',$this->url()->fromRoute('admin/user/update', $this->params()->fromRoute()));
+
         return $this->setTitle('Edit User')
                     ->viewForm(['form' => $this->form]);
     }

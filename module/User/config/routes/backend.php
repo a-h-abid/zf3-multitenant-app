@@ -33,6 +33,18 @@ return [
                         ],
                         'may_terminate' => true,
                     ],
+                    'insert' => [
+                        'type' => Literal::class,
+                        'options' => [
+                            'route'    => '/add',
+                            'verb' => 'post',
+                            'defaults' => [
+                                'controller' => Controller\Backend\UserController::class,
+                                'action'     => 'insert',
+                            ],
+                        ],
+                        'may_terminate' => true,
+                    ],
                     'edit' => [
                         'type' => Segment::class,
                         'options' => [
@@ -44,6 +56,18 @@ return [
                             'defaults' => [
                                 'controller' => Controller\Backend\UserController::class,
                                 'action'     => 'edit',
+                            ],
+                        ],
+                        'may_terminate' => true,
+                    ],
+                    'update' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'    => '/edit/:id',
+                            'verb' => 'put',
+                            'defaults' => [
+                                'controller' => Controller\Backend\UserController::class,
+                                'action'     => 'update',
                             ],
                         ],
                         'may_terminate' => true,
