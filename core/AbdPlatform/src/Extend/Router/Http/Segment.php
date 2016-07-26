@@ -77,9 +77,10 @@ class Segment extends ZendSegment {
      * @see    \Zend\Router\RouteInterface::match()
      * @param  Request      $request
      * @param  integer|null $pathOffset
+     * @param  array        $options
      * @return RouteMatch|null
      */
-    public function match(Request $request, $pathOffset = null)
+    public function match(Request $request, $pathOffset = null, array $options = [])
     {
         if (!method_exists($request, 'getMethod')) {
             return;
@@ -93,7 +94,7 @@ class Segment extends ZendSegment {
             return;
         }
 
-        return parent::match($request, $pathOffset);
+        return parent::match($request, $pathOffset, $options);
     }
 
 }
