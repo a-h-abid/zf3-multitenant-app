@@ -3,6 +3,7 @@
 namespace Helpers\View\Helper;
 
 use AbdPlatform\Extend\Form\FieldgroupInterface;
+use AbdPlatform\Extend\Form\TabsetInterface;
 use Zend\Form\ElementInterface;
 use Zend\Form\FieldsetInterface;
 use Zend\View\Helper\AbstractHelper;

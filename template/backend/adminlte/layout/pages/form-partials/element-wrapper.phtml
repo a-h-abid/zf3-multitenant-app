@@ -1,0 +1,15 @@
+<div class="form-group">
+
+    <label class="col-sm-3 control-label"><?= $element->getLabel() ?></label>
+
+    <div class="col-sm-9">
+
+        <?= $this->formElementPartial($element) ?>
+
+        <?php if ($help = $element->getOption('help')) : ?>
+        <span class="help-block text-teal"><?= $help ?></span>
+        <?php endif; ?>
+
+        <?= $this->formElementErrors()->render($element, ['class' => 'help-block error-block']) ?>
+    </div>
+</div>

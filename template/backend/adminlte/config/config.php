@@ -58,6 +58,10 @@ return [
 
             'layout/pages/form' => 'template/backend/adminlte/layout/pages/form.phtml',
             'layout/pages/js/form' => 'template/backend/adminlte/layout/pages/js/form.js',
+            'layout/pages/form-partials/form-wrapper' => 'template/backend/adminlte/layout/pages/form-partials/form-wrapper.phtml',
+            'layout/pages/form-partials/element-wrapper' => 'template/backend/adminlte/layout/pages/form-partials/element-wrapper.phtml',
+            'layout/pages/form-partials/fieldset-wrapper' => 'template/backend/adminlte/layout/pages/form-partials/fieldset-wrapper.phtml',
+            'layout/pages/form-partials/tabset-wrapper' => 'template/backend/adminlte/layout/pages/form-partials/tabset-wrapper.phtml',
             'layout/pages/form-partials/field-group' => 'template/backend/adminlte/layout/pages/form-partials/field-group.phtml',
             'layout/pages/form-partials/zend-form-element-text' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',
             'layout/pages/form-partials/zend-form-element-email' => 'template/backend/adminlte/layout/pages/form-partials/default.phtml',

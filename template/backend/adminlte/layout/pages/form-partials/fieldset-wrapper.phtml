@@ -1,0 +1,9 @@
+<fieldset>
+    <legend><?= $fieldset->getLabel() ?></legend>
+
+
+    <?php foreach ($fieldset as $field) : ?>
+        <?= $this->formBuilder($field) ?>
+    <?php endforeach; ?>
+
+</fieldset>

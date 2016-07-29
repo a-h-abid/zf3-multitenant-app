@@ -1,0 +1,20 @@
+<form class="form-horizontal" method="<?= $form->getAttribute('method') ?>" action="<?= $form->getAttribute('action') ?>">
+
+    <div class="box-body">
+
+        <?php foreach ($form as $field) : ?>
+
+            <?= $this->formBuilder($field) ?>
+
+        <?php endforeach; ?>
+
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+        <a href="#" class="btn btn-default">Back</a>
+        <button type="submit" class="btn btn-success pull-right">Save</button>
+    </div>
+    <!-- /.box-footer -->
+
+</form>
