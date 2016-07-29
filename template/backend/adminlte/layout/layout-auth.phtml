@@ -18,6 +18,7 @@
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.css')
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.5/css/AdminLTE.min.css')
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.5/css/skins/_all-skins.min.css')
+                ->appendStylesheet($this->basePath().'/assets/backend/adminlte/css/adminlte-black-skin.css')
         ?>
 
         <!-- Scripts -->
@@ -36,7 +37,7 @@
             $.AdminLTE.options.enableControlSidebar = <?= $this->templateSettings('show-control-sidebar') ? 'true' : 'false' ?>;
         </script>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-black sidebar-mini">
 
         <div class="wrapper">
 
