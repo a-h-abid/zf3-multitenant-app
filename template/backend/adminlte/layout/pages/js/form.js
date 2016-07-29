@@ -47,7 +47,10 @@ $.AdminLTE.form.tabsets = {
             var tabContent = $('form .tab-content');
             tabContent.find('.tab-pane').first().addClass('active');
             tabList.find('li').first().addClass('active');
-            tabContent.before(tabList)
+            tabContent.before(tabList);
+
+            // Add our Custom Nav Tab Style
+            $('form ul.nav-tabs, form .tab-content').wrapAll('<div class="nav-tabs-custom">');
 
             $('form ul.nav.nav-tabs a').click(function (e) {
                 e.preventDefault();
