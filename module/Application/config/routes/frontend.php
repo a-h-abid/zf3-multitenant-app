@@ -2,8 +2,10 @@
 
 namespace Application;
 
-use AbdPlatform\Extend\Router\Http\Literal;
-use AbdPlatform\Extend\Router\Http\Segment;
+// use AbdPlatform\Extend\Router\Http\Literal;
+// use AbdPlatform\Extend\Router\Http\Segment;
+use Zend\Router\Http\Literal;
+use Zend\Router\Http\Segment;
 
 return [
 
@@ -29,16 +31,16 @@ return [
             ],
         ],
     ],
-    'color' => [
-        'type'    => Segment::class,
-        'options' => [
-            'route'    => '/{color}',
-            'verb' => 'get',
-            'defaults' => [
-                'controller'    => Controller\IndexController::class,
-                'action'        => 'color',
-            ],
-        ],
-    ],
+    // 'color' => [
+    //     'type'    => Segment::class,
+    //     'options' => [
+    //         'route'    => '/color/{color}',
+    //         'verb' => 'get',
+    //         'defaults' => [
+    //             'controller'    => Controller\IndexController::class,
+    //             'action'        => 'color',
+    //         ],
+    //     ],
+    // ],
 
 ];

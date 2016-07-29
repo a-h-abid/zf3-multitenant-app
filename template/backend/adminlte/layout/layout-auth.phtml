@@ -10,7 +10,7 @@
         ?>
 
         <!-- Styles -->
-        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->assetsPath('/img/favicon.ico')])
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->assetsPath('img/favicon.ico')])
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css')
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
@@ -18,7 +18,8 @@
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.css')
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.5/css/AdminLTE.min.css')
                 ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.5/css/skins/_all-skins.min.css')
-                ->appendStylesheet($this->basePath().'/assets/backend/adminlte/css/adminlte-black-skin.css')
+                ->appendStylesheet($this->assetsPath('css/adminlte-black-skin.css'))
+                ->appendStylesheet($this->assetsPath('css/grid.css'))
         ?>
 
         <!-- Scripts -->

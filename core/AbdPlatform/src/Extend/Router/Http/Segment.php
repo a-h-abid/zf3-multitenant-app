@@ -82,19 +82,21 @@ class Segment extends ZendSegment {
      */
     public function match(Request $request, $pathOffset = null, array $options = [])
     {
-        if (!method_exists($request, 'getMethod')) {
+        $match = parent::match($request, $pathOffset, $options);
+        if ( ! $match) {
             return;
         }
 
         $requestVerb = strtoupper($request->getMethod());
         $matchVerbs  = explode(',', strtoupper($this->verb));
         $matchVerbs  = array_map('trim', $matchVerbs);
+        $hiddenVerb  = $request->getPost('_method');
 
-        if ( ! in_array($requestVerb, $matchVerbs)) {
+        if ( ! in_array($requestVerb, $matchVerbs) && ! in_array($hiddenVerb, $matchVerbs)) {
             return;
         }
 
-        return parent::match($request, $pathOffset, $options);
+        return $match;
     }
 
 }

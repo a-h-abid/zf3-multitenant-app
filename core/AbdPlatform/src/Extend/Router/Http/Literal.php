@@ -7,7 +7,6 @@ use Zend\Router\Exception;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Stdlib\RequestInterface as Request;
 use Zend\Router\Http\Literal as ZendLiteral;
-use Zend\Router\Http\Segment as ZendSegment;
 
 class Literal extends ZendLiteral {
 
@@ -76,19 +75,21 @@ class Literal extends ZendLiteral {
      */
     public function match(Request $request, $pathOffset = null)
     {
-        if (!method_exists($request, 'getMethod')) {
+        $match = parent::match($request, $pathOffset);
+        if ( ! $match) {
             return;
         }
 
         $requestVerb = strtoupper($request->getMethod());
         $matchVerbs  = explode(',', strtoupper($this->verb));
         $matchVerbs  = array_map('trim', $matchVerbs);
+        $hiddenVerb  = $request->getPost('_method');
 
-        if ( ! in_array($requestVerb, $matchVerbs)) {
+        if ( ! in_array($requestVerb, $matchVerbs) && ! in_array($hiddenVerb, $matchVerbs)) {
             return;
         }
 
-        return parent::match($request, $pathOffset);
+        return $match;
     }
 
 }

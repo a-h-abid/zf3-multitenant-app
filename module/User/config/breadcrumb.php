@@ -6,15 +6,15 @@ return [
         'pages' => [
             'user' => [
                 'label' => 'Users',
-                'route' => 'admin/user',
+                'route' => 'admin/user/get',
                 'pages' => [
                     'add' => [
                         'label' => 'Add',
-                        'route' => 'admin/user/add',
+                        'route' => 'admin/user/add/get',
                     ],
                     'edit' => [
                         'label' => 'Edit',
-                        'route' => 'admin/user/edit',
+                        'route' => 'admin/user/edit/get',
                     ],
                 ]
             ],

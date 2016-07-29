@@ -1,9 +1,15 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="box box-primary">
+        <div class="box box-primary grid-box">
 
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $this->pageTitle() ?></h3>
+
+                <div class="btn-group btn-toolbar pull-right">
+                    <?php foreach ($grid->toolbar() as $btn) : ?>
+                    <a href="<?= $btn['link']($this) ?>" class="btn btn-flat bg-<?= $btn['color'] ?>"><i class="<?= $btn['icon'] ?>"></i> <span class="hidden-xs"><?= $btn['label'] ?></span></a>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
             <div class="box-body">
@@ -34,7 +40,22 @@
                                     ?>
                                 <div class="btn-group">
                                     <?php foreach ($column['actions'] as $aItem) : ?>
-                                    <a class="btn btn-flat bg-<?= $aItem['color'] ?>" href="<?= $aItem['link']($item, $this) ?>"><i class="<?= $aItem['icon'] ?>"></i> <span class="hidden-xs"><?= $this->translate($aItem['label']) ?></span></a>
+                                    <a class="btn btn-flat bg-<?= $aItem['color'] ?>"
+                                        href="<?= isset($aItem['link']) ? $aItem['link']($item, $this) : 'javascript:void(0);' ?>"
+                                        <?php if (isset($aItem['prompt'])) : ?>
+                                        data-prompt="true"
+                                        data-prompt-title="<?= $aItem['prompt']['title'] ?>"
+                                        data-prompt-message="<?= $aItem['prompt']['message'] ?>"
+                                        data-prompt-accept="<?= $aItem['prompt']['accept'] ?>"
+                                        data-prompt-reject="<?= $aItem['prompt']['reject'] ?>"
+                                        data-prompt-url="<?= $aItem['prompt']['link']($item, $this) ?>"
+                                        data-prompt-verb="<?= $aItem['prompt']['http-verb'] ?>"
+                                        data-toggle="modal"
+                                        data-target="#prompt-box"
+                                        <?php endif; ?>
+                                        >
+                                        <i class="<?= $aItem['icon'] ?>"></i> <span class="hidden-xs"><?= $this->translate($aItem['label']) ?></span>
+                                    </a>
                                     <?php endforeach; ?>
                                 </div>
                                     <?php
@@ -51,6 +72,27 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="prompt-box" tabindex="-1" role="dialog" aria-labelledby="prompt-title">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="prompt-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                Model Body
+            </div>
+            <div class="modal-footer">
+                <form class="prompt-form">
+                    <button type="button" data-reject class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" data-accept class="btn btn-primary" name="prompt-submit">Save changes</button>
+                    <input type="hidden" name="_method" value="" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php
 

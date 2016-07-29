@@ -32,26 +32,19 @@ class Module
     }
 
     public function detectTemplate(MvcEvent $e)
-    {        
+    {
         $request = $e->getApplication()->getRequest();
         if (!$request instanceOf HttpRequest)
             return;
 
         $services = $e->getApplication()->getServiceManager();
-        $router = $services->get('router');
         $config = $services->get('configuration');
         $translator = $services->get('translator');
-        $matchedRoute = $router->match($request);
         $requestUri = $request->getRequestUri();
         $isBackend = false;
         $templateType = 'frontend';
 
-        if ($matchedRoute)
-        {
-            $routeName = $matchedRoute->getMatchedRouteName();
-            $isBackend = strpos($routeName, 'admin') !== false;
-        }
-        elseif (strpos($requestUri, 'admin'))
+        if (strpos($requestUri, 'admin'))
         {
             $isBackend = true;
         }

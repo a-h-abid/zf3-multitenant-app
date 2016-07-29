@@ -4,6 +4,22 @@ namespace User\Grid;
 
 class UserGrid {
 
+    public function toolbar()
+    {
+        $toolbar = [];
+
+        $toolbar['add'] = [
+            'label' => 'Add',
+            'color' => 'green',
+            'icon' => 'fa fa-plus',
+            'link' => function($view) {
+                return $view->url('admin/user/add/get');
+            }
+        ];
+
+        return $toolbar;
+    }
+
     public function columns()
     {
         $grid = [];
@@ -30,7 +46,7 @@ class UserGrid {
                     'color' => 'blue',
                     'icon' => 'fa fa-pencil',
                     'link' => function($item, $view) {
-                        return $view->url('admin/user/edit',['id' => $item['id']]);
+                        return $view->localeUrl('admin/user/edit/get', ['id' => $item['id']]);
                     }
                 ],
 
@@ -38,9 +54,16 @@ class UserGrid {
                     'label' => 'Delete',
                     'color' => 'red',
                     'icon' => 'fa fa-times',
-                    'link' => function($item, $view) {
-                        return $view->url('admin/user/delete',['id' => $item['id']]);
-                    }
+                    'prompt' => [
+                        'title' => 'Delete Confirmation',
+                        'message' => 'Are you sure you want to delete this item?',
+                        'accept' => 'Yes',
+                        'reject' => 'No',
+                        'link' => function($item, $view) {
+                            return $view->localeUrl('admin/user/delete/post', ['id' => $item['id']]);
+                        },
+                        'http-verb' => 'delete'
+                    ]
                 ],
 
             ],

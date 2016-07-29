@@ -6,7 +6,7 @@ return [
         'pages' => [
             'user' => [
                 'label' => 'Users',
-                'route' => 'admin/user',
+                'route' => 'admin/user/get',
                 'icon-class' => 'fa fa-user',
             ]
         ]

@@ -2,8 +2,10 @@
 
 namespace Administrator;
 
-use AbdPlatform\Extend\Router\Http\Literal;
-use AbdPlatform\Extend\Router\Http\Segment;
+// use AbdPlatform\Extend\Router\Http\Literal;
+// use AbdPlatform\Extend\Router\Http\Segment;
+use Zend\Router\Http\Literal;
+use Zend\Router\Http\Segment;
 
 return [
 
