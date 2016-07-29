@@ -29,6 +29,7 @@ class FormElementPartial extends AbstractHelper {
     {
         $viewStr = '';
         $layoutPath = 'layout/pages/form-partials/field-group';
+        $elementsCount = $fields->getOption('column') ?: $elementsCount;
         foreach ($fields as $field)
         {
             $viewStr .= $this->getView()->render($layoutPath, ['field' => $field,'elementsCount' => $elementsCount]);

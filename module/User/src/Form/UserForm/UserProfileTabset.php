@@ -17,6 +17,7 @@ class UserProfileTabset extends Tabset {
             'options' => [
                 'label' => 'Full Name',
                 'help' => 'Your full name as in your passport',
+                'column' => 3
             ]
         ]);
 
