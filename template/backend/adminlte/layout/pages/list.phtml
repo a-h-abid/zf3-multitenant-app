@@ -34,7 +34,7 @@
                                     ?>
                                 <div class="btn-group">
                                     <?php foreach ($column['actions'] as $aItem) : ?>
-                                    <a class="btn btn-flat bg-<?= $aItem['color'] ?>" href="<?= $aItem['link']($item) ?>"><i class="<?= $aItem['icon'] ?>"></i> <span class="hidden-xs"><?= $this->translate($aItem['label']) ?></span></a>
+                                    <a class="btn btn-flat bg-<?= $aItem['color'] ?>" href="<?= $aItem['link']($item, $this) ?>"><i class="<?= $aItem['icon'] ?>"></i> <span class="hidden-xs"><?= $this->translate($aItem['label']) ?></span></a>
                                     <?php endforeach; ?>
                                 </div>
                                     <?php

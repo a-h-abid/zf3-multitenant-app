@@ -29,8 +29,8 @@ class UserGrid {
                     'label' => 'Edit',
                     'color' => 'blue',
                     'icon' => 'fa fa-pencil',
-                    'link' => function($item) {
-                        return 'admin/usr/'.$item['id'].'/edit';
+                    'link' => function($item, $view) {
+                        return $view->url('admin/user/edit',['id' => $item['id']]);
                     }
                 ],
 
@@ -38,8 +38,8 @@ class UserGrid {
                     'label' => 'Delete',
                     'color' => 'red',
                     'icon' => 'fa fa-times',
-                    'link' => function($item) {
-                        return 'admin/usr/'.$item['id'].'/delete';
+                    'link' => function($item, $view) {
+                        return $view->url('admin/user/delete',['id' => $item['id']]);
                     }
                 ],
 

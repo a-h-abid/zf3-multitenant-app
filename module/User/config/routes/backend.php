@@ -73,10 +73,13 @@ return [
                         'may_terminate' => true,
                     ],
                     'delete' => [
-                        'type' => Literal::class,
+                        'type' => Segment::class,
                         'options' => [
-                            'route'    => '/delete',
+                            'route'    => '/delete[/:id]',
                             'verb' => 'delete',
+                            'constraints' => [
+                                'id' => '[0-9]+'
+                            ],
                             'defaults' => [
                                 'controller' => Controller\Backend\UserController::class,
                                 'action'     => 'delete',
