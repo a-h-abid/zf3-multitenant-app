@@ -18,4 +18,9 @@ abstract class BaseController extends AbstractActionController
     {
         return new JsonModel($data);
     }
+
+    protected function raw($data)
+    {
+        return $this->getResponse()->setContent($data);
+    }
 }
