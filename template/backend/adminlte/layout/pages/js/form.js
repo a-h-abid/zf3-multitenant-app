@@ -22,7 +22,7 @@ $.AdminLTE.form.tabsets = {
             tabsets.each(function(i,tabEl){
                 var $tabEl = $(tabEl),
                     tabButtons = $('<div class="btn-tabs">');
-                tabNames.push($tabEl.attr('title'))
+                tabNames.push($tabEl.attr('data-label'))
 
                 $tabEl.attr('id', ['tab-',i].join(''));
 
